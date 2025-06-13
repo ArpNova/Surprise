@@ -14,8 +14,8 @@ let animationFrameId;
 // Smooth auto-rotate using requestAnimationFrame
 function animate() {
   if (!isAutoRotating) return;
-  rotateY += 0.73;
-  rotateX += 0.65;
+  rotateY += 0.25;
+  rotateX += 0.2;
   cube.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
   animationFrameId = requestAnimationFrame(animate);
 }
