@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="cloud-screen"></div>
+
+
+    <div id="main-content">
+      <div class="cube-container" id="cubeContainer">
+        <div class="cube" id="cube">
+          <div class="face front"></div>
+          <div class="face back"></div>
+          <div class="face right"></div>
+          <div class="face left"></div>
+          <div class="face top"></div>
+          <div class="face bottom"></div>
+    
+          <div class="inner-cube">
+            <div class="inner-face i-front"></div>
+            <div class="inner-face i-back"></div>
+            <div class="inner-face i-right"></div>
+            <div class="inner-face i-left"></div>
+            <div class="inner-face i-top"></div>
+            <div class="inner-face i-bottom"></div>
+          </div>
+        </div>
+      </div>
+      <button class="nav-button" id="navBtn" onclick="goToNextPage()">Go to Next Page</button>
+      
+    </div>
+  
+    
+
+
+    <script>
+      setTimeout(() => {
+        document.body.classList.add('loaded');
+        document.getElementById('navBtn').classList.add('show');
+      }, 50000);
+    </script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Surprise</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      background: black;
+      overflow: hidden;
+      position: relative;
+      font-family: 'Arial', sans-serif;
+      cursor: pointer;
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out;
+    }
+
+    @keyframes twinkle {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 1; }
+    }
+
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      font-size: 2em;
+      text-align: center;
+      text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+      animation: glow 2s infinite ease-in-out;
+    }
+
+    @keyframes glow {
+      0%, 100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #0ff, 0 0 30px #0ff;
+      }
+      50% {
+        text-shadow: 0 0 20px #fff, 0 0 30px #0ff, 0 0 40px #0ff;
+      }
+    }
+  </style>
+</head>
+<body onclick="redirectToGift()">
+  <div class="text">I have a gift for you</div>
+
+  <script>
+    // Generate random stars
+    const totalStars = 150;
+    for (let i = 0; i < totalStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      star.style.top = Math.random() * window.innerHeight + 'px';
+      star.style.left = Math.random() * window.innerWidth + 'px';
+      star.style.animationDuration = (Math.random() * 3 + 1) + 's';
+      document.body.appendChild(star);
+    }
+
+    function redirectToGift() {
+      window.location.href = '/main/index.html'; // Change to your desired URL
+    }
+  </script>
+</body>
+</html>
